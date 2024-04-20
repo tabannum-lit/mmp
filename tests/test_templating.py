@@ -20,3 +20,7 @@ class TestQuizTemplates(TestCase):
             self.assertIn(ans, htmlpage, "Wrong HTML generated")
         self.assertIn("5 out of 20", htmlpage, "Wrong HTML generated")
 
+
+    def test_bad_template(self):
+        with self.assertRaises(IOError):
+            QuizTemplate("nonexistent.tpl")
