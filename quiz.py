@@ -95,24 +95,24 @@ class Quiz:
     def match(self, question):
         """Return the matching quiz item
 
-    Args:
-        question: question to match
+        Args:
+            question: question to match
 
-    Returns:
-        The quiz item or None if the item is not found
-    """
-    # Check for exact match first
-            for item in self:
-                if item.question.strip() == question.strip():
-                    return item
+        Returns:
+            The quiz item or None if the item is not found
+        """
+        # Check for exact match first
+        for item in self:
+            if item.question.strip() == question.strip():
+                return item
 
-            # If exact match not found, check for matching with leading blanks
-            for item in self:
-                if item.question.strip().startswith(question.strip()):
-                    return item
+        # If exact match not found, check for matching with leading blanks
+        for item in self:
+            if item.question.strip().startswith(question.strip()):
+                return item
 
-    # If no match found
-            return None
+        # If no match found
+        return None
 
     def remove(self, old_item):
         """Remove an item from the quiz
