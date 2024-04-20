@@ -17,6 +17,15 @@ class QuizTemplate:
         fd.close()
 
     def format(self, substitutions):
+        """
+                Substitute the placeholders in the template with the values in the dictionary.
+
+                Args:
+                    substitutions (dict): A dictionary containing key-value pairs for substitutions.
+
+                Returns:
+                    str: The formatted template string.
+                """
         if "answers" in substitutions:
             answer_count = len(substitutions['answers'])
             substitutions['answers'].extend(['Not Available'] * (10 - answer_count))

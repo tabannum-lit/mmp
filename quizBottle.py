@@ -58,10 +58,19 @@ class QuizBottle(Bottle):
     normal_template = QuizTemplate("normalPage.tpl")
     last_template = QuizTemplate("lastPage.tpl")
 
+
+    @classmethod
+    def quiz_name(cls):
+        return cls.one_quiz.name
+
     def __init__(self):
         super(QuizBottle, self).__init__()
         self.route("/", callback=self.quizzing)
         self.route("/answer", callback=self.answering, method="POST")
+        self.route("/name", callback=self.quiz_name_handler)
+
+    def quiz_name_handler(self):
+        return self.quiz_name()
 
     @classmethod
     def nextPage(cls):
