@@ -1,2 +1,2 @@
 ttabannum@mun.ca
-Tasneem TAbannum
+Tasneem Tabannum
